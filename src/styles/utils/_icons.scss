@@ -1,0 +1,126 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.ico {
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  @include active(scale, 0.9);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  filter: $icon-filter;
+
+  &-search {
+    background-image: url('../../assets/icons/search.svg');
+    background-color: $color-elements;
+  }
+
+  &-up {
+    background-image: url('../../assets/icons/up-dark.svg');
+
+    &--disabled {
+      background-image: url('../../assets/icons/up.svg');
+    }
+  }
+
+  &-home {
+    background-image: url('../../assets/icons/home.svg');
+    translate: 0 -1px;
+  }
+
+  &-right {
+    background-image: url('../../assets/icons/right.svg');
+  }
+
+  &-right-dark {
+    background-image: url('../../assets/icons/right-dark.svg');
+  }
+
+  &-left {
+    background-image: url('../../assets/icons/left.svg');
+  }
+
+  &-left-dark {
+    background-image: url('../../assets/icons/left-dark.svg');
+  }
+
+  &-down {
+    background-image: url('../../assets/icons/down-dark.svg');
+  }
+
+  &-close {
+    background-image: url('../../assets/icons/close.svg');
+
+    &:hover {
+      background-image: url('../../assets/icons/close-dark.svg');
+    }
+  }
+
+  &-close-dark {
+    background-image: url('../../assets/icons/close-dark.svg');
+
+    &:hover {
+      background-image: url('../../assets/icons/close.svg');
+    }
+  }
+
+  &-menu {
+    background-image: url('../../assets/icons/menu-dark.svg');
+
+    &:hover {
+      background-image: url('../../assets/icons/menu.svg');
+    }
+  }
+
+  &-fav {
+    transition: all ease $effect-duration;
+    background-image: url('../../assets/icons/fav-dark.svg');
+
+    &-red {
+      background-image: url('../../assets/icons/fav-red.svg');
+    }
+  }
+
+  &-cart {
+    background-image: url('../../assets/icons/cart.svg');
+  }
+
+  &-minus {
+    border: 1px solid $color-elements;
+    background-image: url('../../assets/icons/minus-dark.svg');
+
+    &:hover {
+      border-color: $color-primary;
+    }
+  }
+
+  &-disabled-minus {
+    cursor: default;
+    border: 1px solid $color-elements;
+    background-image: url('../../assets/icons/minus.svg');
+    &:hover {
+      border-color: $color-elements;
+    }
+  }
+
+  &-plus {
+    border: 1px solid $color-elements;
+    background-image: url('../../assets/icons/plus-dark.svg');
+
+    &:hover {
+      border-color: $color-primary;
+    }
+  }
+
+  &-list {
+    background-image: url('../../assets/icons/view-list.svg');
+  }
+
+  &-grid {
+    background-image: url('../../assets/icons/view-grid.svg');
+  }
+}

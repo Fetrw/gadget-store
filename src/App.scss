@@ -1,3 +1,43 @@
-.starter {
-  font-size: 18px;
+@import './styles/index.scss';
+
+html {
+  scroll-behavior: smooth;
+  font-family: $mont;
+  background-color: $page-bg-color;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body > div:nth-child(1) {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  @include content-padding-inline;
+  @include desktop-container;
+
+  width: 100%;
+  flex-grow: 1;
+}
+
+body:has(div#root > div.App > aside.menu--open) {
+  overflow: hidden;
 }

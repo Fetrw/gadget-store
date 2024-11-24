@@ -1,0 +1,58 @@
+@import '../../../styles/utils/variables';
+@import '../../../styles/utils/mixins';
+
+.category-card {
+  &__img-box {
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    margin-bottom: 24px;
+    position: relative;
+    transition: transform $effect-duration;
+
+    @include hover(transform, scale(1.05))
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform $effect-duration;
+  }
+
+  &__title {
+    color: $color-primary;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25.56px;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 4px;
+  }
+
+  &__count {
+    color: $color-secondary;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+  }
+}
+
+.shop__categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 24px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include on-mobile {
+    grid-template-columns: 1fr;
+  }
+}

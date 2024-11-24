@@ -1,0 +1,171 @@
+@import '../../styles/utils/mixins';
+
+.products {
+  padding-top: 24px;
+  padding-bottom: 80px;
+
+  @include on-tablet {
+    padding-bottom: 64px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 24px;
+
+    @include on-mobile {
+      gap: 32px;
+    }
+  }
+
+  &__title {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    @include h1;
+  }
+
+  &__amount {
+    @include body-text;
+    color: $color-secondary;
+  }
+
+  &__filters {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    &-wrapper-r {
+      display: flex;
+      gap: 10px;
+    }
+
+    &-wrapper-l {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__filter {
+    width: 136px;
+
+    &--sort-by {
+      width: 176px;
+    }
+
+    @include on-mobile {
+      width: 136px;
+    }
+
+    &--search {
+      display: flex;
+      align-items: end;
+    }
+
+    &-search-input {
+      height: 40px;
+
+      @include body-text;
+      padding-inline: 5px;
+      background-color: $page-bg-color;
+      color: $color-primary;
+      border: 1px solid #b4bdc3;
+    }
+  }
+
+  &__filter-label {
+    @include small-text;
+    color: $color-secondary;
+    margin-bottom: 4px;
+  }
+
+  &__list {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 16px;
+    row-gap: 40px;
+
+    @media (max-width: 1048px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 790px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 470px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    justify-self: center;
+
+    @include on-mobile {
+      justify-self: unset;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+
+    @include on-mobile {
+      padding-top: 24px;
+    }
+  }
+
+  &__loader {
+    height: 50vh;
+  }
+
+  &__not-found {
+    padding-top: 20px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__not-found-text {
+    @include h3;
+    margin-bottom: 30px;
+  }
+
+  &__not-found-img {
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  &__view-wrp {
+    display: flex;
+    align-items: end;
+  }
+
+  &__view-btn {
+    @include small-text;
+    @include hover(border, 1px solid #89939a);
+    @include active(scale, 0.95);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+
+    height: 40px;
+    background-color: $page-bg-color;
+    border: 1px solid #b4bdc3;
+    cursor: pointer;
+  }
+  &__view-icon {
+    height: 32px;
+    width: 32px;
+  }
+}
