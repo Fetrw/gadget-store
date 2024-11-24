@@ -1,0 +1,62 @@
+$mobile-max-width: 639px;
+$tablet-max-width: 1199px;
+$container-max-width: 1136px;
+$desktop-min-width: 1200px;
+$effect-duration: 0.3s;
+$footer-height: 96px;
+
+$mont: Mont, Arial, sans-serif;
+
+$page-bg-color: #fff;
+$color-primary: #313237;
+$color-secondary: #89939a;
+$color-icons: #b4bdc3;
+$color-elements: #e2e6e9;
+$color-hover-background: #fafbfc;
+$color-white: #fff;
+$color-red: #eb5757;
+$color-green: #27ae60;
+$color-phones: #6d6474;
+$color-tablets: #8d8d92;
+$color-accessories: #973d5f;
+
+$button-color: $color-white;
+$button-color-selected: $color-green;
+$button-bg-color: $color-primary;
+$button-bg-color-selected: $color-white;
+$button-border-color: $color-primary;
+$button-border-color-selected: $color-elements;
+
+$capacity-button-color: $color-primary;
+$capacity-button-bg-color: $color-white;
+$capacity-button-selected-bg-color: $color-primary;
+
+$dropdown-hover-color: $color-primary;
+
+$hover-shadow-color: 0 5px 10px 3px rgba(23, 32, 49, 0.4);
+
+$product-card-bg-color: $color-white;
+
+$icon-filter: none;
+
+$dropdown-mainbutton-bg-color: $page-bg-color;
+$dropdown-mainbutton-border-color: $color-icons;
+$dropdown-mainbutton-border-hover: $color-secondary;
+$dropdown-mainbutton-border-focused: $color-primary;
+$dropdown-options-border-color: $color-elements;
+$dropdown-option-hover-color: $color-hover-background;
+
+$add-to-fav-bg: $page-bg-color;
+$add-to-fav-bg-hover: $page-bg-color;
+$add-to-fav-border: $color-icons;
+$add-to-fav-border-hover: $color-primary;
+
+$pagin-number-bg-color: $page-bg-color;
+$pagin-number-bg-active: $color-primary;
+$pagin-number-border: $color-elements;
+$pagin-number-border-active: $color-primary;
+$pagin-number-text-color: $color-primary;
+$pagin-number-text-color-active: $color-white;
+
+$pagin-button-bg: $page-bg-color;
+$pagin-button-border: $color-icons;

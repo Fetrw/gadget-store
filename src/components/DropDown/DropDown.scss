@@ -1,0 +1,80 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+.dropbutton {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    background-color: $dropdown-mainbutton-bg-color;
+    border: 1px solid $dropdown-mainbutton-border-color;
+
+    @include buttons-text;
+
+    &:hover {
+      border-color: $dropdown-mainbutton-border-hover;
+    }
+
+    &--active {
+      border-color: $dropdown-mainbutton-border-focused;
+
+      &:hover {
+        border-color: $dropdown-mainbutton-border-focused;
+      }
+    }
+  }
+
+  &__bottom {
+    min-width: 100%;
+    background-color: $page-bg-color;
+    position: absolute;
+    top: 44px;
+    padding-block: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $dropdown-options-border-color;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+
+    transition:
+      opacity $effect-duration,
+      transform $effect-duration;
+
+    &--active {
+      z-index: 1;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+
+  &__option {
+    height: 32px;
+    text-align: left;
+
+    @include body-text;
+    color: $color-secondary;
+
+    &:hover {
+      background: $dropdown-option-hover-color;
+      color: $color-primary;
+    }
+  }
+}

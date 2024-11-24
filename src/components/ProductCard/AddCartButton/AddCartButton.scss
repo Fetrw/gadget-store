@@ -1,0 +1,27 @@
+@import '../../../styles/index.scss';
+
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: $button-bg-color;
+  border: 1px solid $button-border-color;
+  box-sizing: border-box;
+
+  color: $button-color;
+  font-weight: 600;
+  font-size: 14px;
+  flex-grow: 1;
+
+  cursor: pointer;
+
+  @include hover(box-shadow, $hover-shadow-color);
+  transition: all ease $effect-duration;
+
+  &--selected {
+    background-color: $button-bg-color-selected;
+    color: $button-color-selected;
+    border: 1px solid $button-border-color-selected;
+  }
+}

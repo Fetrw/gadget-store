@@ -1,0 +1,240 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+$button-size-desktop: 64px;
+$button-size-tablet: 48px;
+
+.menu-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $button-size-tablet;
+  height: $button-size-tablet;
+  border: none;
+  background: transparent;
+  box-shadow: -1px 0px 0px 0px $color-elements;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include active(scale, 0.95);
+}
+
+.header {
+  display: flex;
+  box-shadow: 0px 1px 0px 0px $color-elements;
+
+  @include on-mobile {
+    z-index: 2;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo-link {
+    display: flex;
+    padding: 18px 24px;
+
+    @include on-tablet {
+      padding: 13px 16px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+  }
+}
+
+@mixin hover-active-link {
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    transition: background-color $effect-duration;
+
+    @include on-tablet {
+      height: 2px;
+    }
+  }
+
+  &:hover {
+    color: $color-primary;
+
+    &::after {
+      background: $color-primary;
+    }
+  }
+
+  &.active {
+    color: $color-primary;
+
+    &::after {
+      background: $color-primary;
+    }
+  }
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: $color-red;
+  filter: $icon-filter;
+
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+
+  color: $color-white;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 11.5px;
+  text-align: center;
+}
+
+.logo {
+  width: 80px;
+  height: 28px;
+  transition: all $effect-duration;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @include on-tablet {
+    width: 64px;
+    height: 22px;
+  }
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  @include on-mobile {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+    padding-left: 24px;
+    transition: all $effect-duration;
+
+    @include on-tablet {
+      gap: 32px;
+      padding-left: 16px;
+    }
+
+    @include on-mobile {
+      flex-direction: column;
+      padding-top: 72px;
+      padding-left: 0;
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: $button-size-desktop;
+    letter-spacing: 0.04em;
+    color: $color-secondary;
+    transition: color $effect-duration;
+
+    @include on-tablet {
+      line-height: $button-size-tablet;
+    }
+
+    @include on-mobile {
+      height: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include hover-active-link;
+  }
+}
+
+.menu {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: $page-bg-color;
+  transform: translateX(100%);
+  transition: all $effect-duration;
+
+  &--open {
+    transform: translateX(0);
+  }
+}
+
+.icon {
+  position: relative;
+}
+
+.nav__buttons {
+  display: flex;
+
+  @include on-mobile {
+    width: 100%;
+    border: 1px solid $color-elements;
+    box-sizing: border-box;
+  }
+
+  &-lng-wrp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-lng-btn {
+    color: $color-primary;
+    background-color: $page-bg-color;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.nav__button {
+  position: relative;
+  box-shadow: -1px 0px 0px 0px $color-elements;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $button-size-desktop;
+  height: $button-size-desktop;
+  transition:
+    width $effect-duration,
+    height $effect-duration;
+
+  @include on-tablet {
+    width: $button-size-tablet;
+    height: $button-size-tablet;
+  }
+
+  @include on-mobile {
+    width: 50%;
+    height: 64px;
+  }
+
+  @include hover-active-link;
+}

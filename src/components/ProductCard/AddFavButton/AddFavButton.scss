@@ -1,0 +1,25 @@
+@import '../../../styles/utils/mixins';
+
+.add-to-fav {
+  height: 40px;
+  width: 40px;
+  border: 1px solid $add-to-fav-border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $add-to-fav-bg;
+  background: transparent;
+  cursor: pointer;
+
+  @include hover(border-color, $add-to-fav-border-hover);
+  @include hover(background-color, $add-to-fav-bg-hover);
+
+  &--added {
+    background-color: transparent;
+    border: 1px solid $color-elements;
+  }
+}
+
+.icon-fav--added {
+  filter: $icon-filter;
+}
